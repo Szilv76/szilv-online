@@ -1,34 +1,31 @@
-import Header from '../components/Header.jsx'
-import Hero from '../components/Hero.jsx'
-import ProjectCard from '../components/ProjectCard.jsx'
-import Footer from '../components/Footer.jsx'
-import { projects } from '../data/projects.js'
+import portraitTheatre from '../assets/images/portrait-theatre.webp'
+import portraitTrombone from '../assets/images/portrait-trombone.webp'
 
 export default function Home() {
   return (
-    <div id="top">
-      <Header />
-      <main>
-        <Hero />
-        <section className="projects-section" id="projektek">
-          <div className="container section-heading">
-            <p>Kiemelt munkák</p>
-            <h2>Amit most<br />építek.</h2>
-            <span>03 projekt</span>
-          </div>
-          <div className="container project-grid">
-            {projects.map((project) => <ProjectCard key={project.number} project={project} />)}
-          </div>
-        </section>
-        <section className="about-section container" id="rolam">
-          <p className="about-label">/ A műhelyről</p>
-          <div className="about-copy">
-            <h2>Hiszek a hasznos, szép és emberi digitális terekben.</h2>
-            <p>A szilv.online személyes műhely: hely azoknak a projekteknek, amelyek kíváncsiságból indulnak, és valami kézzelfoghatóvá nőnek.</p>
+    <div className="cinematic-home">
+      <header className="cinematic-header">
+        <span className="cinematic-wordmark">szilv.online</span>
+      </header>
+
+      <main className="cinematic-stage">
+        <section className="cinematic-intro" aria-labelledby="intro-title">
+          <p className="cinematic-kicker">ZENE <span aria-hidden="true">•</span> SZÍNHÁZ</p>
+          <h1 id="intro-title">Bornai<br />Szilveszter</h1>
+          <div className="cinematic-subtitle">
+            <p>Budapesten születtem, gyermekkorom óta a zene az életem meghatározó része. Szolfézs–zeneelmélet szakon végeztem, hangszereim a harsona, a zongora és a tangóharmonika.</p>
+            <p>Számos magyarországi színházban dolgoztam, az előadásokban nemcsak hangszeres zenészként, hanem hangszerelőként is közreműködtem. 2021 és 2026 között Amszterdamban és Hágában éltem és dolgoztam színházi zenészként és zenetanárként.</p>
           </div>
         </section>
+
+        <figure className="cinematic-photo cinematic-photo--trombone">
+          <img src={portraitTrombone} alt="Bornai Szilveszter harsonával" />
+        </figure>
+
+        <figure className="cinematic-photo cinematic-photo--theatre">
+          <img src={portraitTheatre} alt="Bornai Szilveszter egy színházban, hangszerek között" />
+        </figure>
       </main>
-      <Footer />
     </div>
   )
 }
